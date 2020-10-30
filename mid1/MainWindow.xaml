@@ -1,0 +1,43 @@
+﻿<Window x:Class="mid1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mid1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox Name="cmbFlower" HorizontalAlignment="Left" Margin="41,278,0,0" VerticalAlignment="Top" Width="202" SelectionChanged="CmbFlower_SelectionChanged" Height="29"/>
+        <ComboBox Name="cmbColor"  HorizontalAlignment="Left" Margin="507,278,0,0" VerticalAlignment="Top" Width="216" SelectionChanged="CmbColor_SelectionChanged" Height="29"/>
+        <DataGrid Name="gridFlower" HorizontalAlignment="Left" Height="209" Margin="41,35,0,0" 
+                  VerticalAlignment="Top" Width="202"
+                    AutoGenerateColumns="False" SelectionChanged="GridFlower_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding}" 
+                                Foreground="Black" Width="60" Header="Fruit" IsReadOnly="false" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="gridColor"  HorizontalAlignment="Left" Height="209" Margin="507,35,0,0"
+                  VerticalAlignment="Top" Width="216" AutoGenerateColumns="False" SelectionChanged="GridColor_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding}" 
+                                Foreground="Black" Width="60" Header="State" IsReadOnly="false" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="216,343,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BtnClear_Click"/>
+        <Button Name="btnDeleteSelected" Content="Delete selected row" HorizontalAlignment="Left" Margin="419,343,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="BtnDeleteSelected_Click"/>
+        <Label Content="Flower" HorizontalAlignment="Left" Margin="44,249,0,0" VerticalAlignment="Top" Height="24" Width="56"/>
+        <Label Content="Color" HorizontalAlignment="Left" Margin="507,245,0,0" VerticalAlignment="Top" Width="70" Height="30" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+
+    </Grid>
+</Window>
